@@ -1,0 +1,55 @@
+//nesting
+// body {
+//   background-color: salmon;
+// }
+// .main {
+//   background-color: lightblue;
+//   .main-header {
+//     font-size: 2em;
+//   }
+//   .main-parafgraf {
+//     font-size: 1.4em;
+//   }
+// }
+// h1,
+// p {
+//   letter-spacing: 1px;
+// }
+
+// .main,
+// footer {
+//   h1,
+//   p {
+//     letter-spacing: 1em;
+//   }
+// }
+
+//parent selector
+// .main {
+//   .container & {
+//     background-color: lightblue;
+//   }
+//   .main-heading {
+//     font-size: 2em;
+//   }
+
+//   &:hover {
+//     background-color: salmon;
+//   }
+// }
+.footer {
+  & &-header {
+    font-size: 2em;
+  }
+  & &-paragraph {
+    font-size: 1.4em;
+  }
+}
+.main {
+  & &-header {
+    font-size: 2em;
+  }
+  & &-paragraph {
+    font-size: 1.4em;
+  }
+}
