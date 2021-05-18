@@ -37,19 +37,53 @@
 //     background-color: salmon;
 //   }
 // }
-.footer {
-  & &-header {
-    font-size: 2em;
-  }
-  & &-paragraph {
-    font-size: 1.4em;
-  }
+// .footer {
+//   & &-header {
+//     font-size: 2em;
+//   }
+//   & &-paragraph {
+//     font-size: 1.4em;
+//   }
+// }
+// .main {
+//   & &-header {
+//     font-size: 2em;
+//   }
+//   & &-paragraph {
+//     font-size: 1.4em;
+//   }
+// }
+
+// CSS Variabel
+
+// :root {
+//   --primary-color: blue;
+//   --secondary-color: salmon;
+//   --text-color: red;
+// }
+// body {
+//   background: var(--primary-color);
+// }
+// h1 {
+//   color: var(--text-color);
+// }
+
+//sass Variable
+
+$secondary-color: red;
+$text-color: blue;
+
+body {
+  $primary-color: salmon !global;
+  background-color: $primary-color;
 }
-.main {
-  & &-header {
-    font-size: 2em;
-  }
-  & &-paragraph {
-    font-size: 1.4em;
-  }
+
+//Map
+$alert: (
+  "danger": red,
+  "success": green,
+  "warning": orange,
+);
+h1 {
+  color: map-get($alert, "success");
 }
