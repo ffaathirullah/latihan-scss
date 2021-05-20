@@ -93,111 +93,129 @@
 // @use "modules/container";
 // @use "modules/footer";
 
-@mixin profile-pic($size, $circle: false) {
-  width: $size;
-  height: $size;
-  border: 5px solid white;
-  box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.3);
+// @mixin profile-pic($size, $circle: false) {
+//   width: $size;
+//   height: $size;
+//   border: 5px solid white;
+//   box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.3);
 
-  @if $circle {
-    border-radius: 50%;
-  }
-}
+//   @if $circle {
+//     border-radius: 50%;
+//   }
+// }
 
-.circleProfile {
-  @include profile-pic(200px, $circle: false);
-}
-.squareProfile {
-  @include profile-pic(80px, $circle: true);
-}
+// .circleProfile {
+//   @include profile-pic(200px, $circle: false);
+// }
+// .squareProfile {
+//   @include profile-pic(80px, $circle: true);
+// }
 
-//else
-$lighBg: #eaeaea;
-$darkBg: #999;
-$lightText: #333;
-$darkText: #ddd;
+// //else
+// $lighBg: #eaeaea;
+// $darkBg: #999;
+// $lightText: #333;
+// $darkText: #ddd;
 
-@mixin color-mode($lightMode: true) {
-  @if $lightMode {
-    background-color: $lighBg;
-    color: $lightText;
-  } @else {
-    background-color: $darkBg;
-    color: $darkText;
-  }
-}
+// @mixin color-mode($lightMode: true) {
+//   @if $lightMode {
+//     background-color: $lighBg;
+//     color: $lightText;
+//   } @else {
+//     background-color: $darkBg;
+//     color: $darkText;
+//   }
+// }
 
-.nav {
-  @include color-mode($lightMode: false);
-}
+// .nav {
+//   @include color-mode($lightMode: false);
+// }
 
-// else if
-body {
-  min-height: 1000px;
-}
+// // else if
+// body {
+//   min-height: 1000px;
+// }
 
-@mixin triangle($size, $color, $direction) {
-  width: 0;
-  height: 0;
-  background-color: transparent;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 2em;
-  @if $direction == top {
-    border-bottom-color: $color;
-  } @else if $direction == right {
-    border-left-color: $color;
-  } @else if $direction == bottom {
-    border-top-color: $color;
-  } @else if $direction == left {
-    border-right-color: $color;
-  }
-}
-.right {
-  @include triangle(2em, black, right);
-}
-.bottom {
-  @include triangle(2em, rgb(173, 72, 72), bottom);
-}
+// @mixin triangle($size, $color, $direction) {
+//   width: 0;
+//   height: 0;
+//   background-color: transparent;
+//   border-color: transparent;
+//   border-style: solid;
+//   border-width: 2em;
+//   @if $direction == top {
+//     border-bottom-color: $color;
+//   } @else if $direction == right {
+//     border-left-color: $color;
+//   } @else if $direction == bottom {
+//     border-top-color: $color;
+//   } @else if $direction == left {
+//     border-right-color: $color;
+//   }
+// }
+// .right {
+//   @include triangle(2em, black, right);
+// }
+// .bottom {
+//   @include triangle(2em, rgb(173, 72, 72), bottom);
+// }
 
-.left {
-  @include triangle(2em, rgb(130, 190, 61), left);
-}
-.top {
-  @include triangle(2em, rgba(60, 221, 39, 0.692), top);
-}
+// .left {
+//   @include triangle(2em, rgb(130, 190, 61), left);
+// }
+// .top {
+//   @include triangle(2em, rgba(60, 221, 39, 0.692), top);
+// }
 
-//for
-.gradient {
-  $color: green;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  $i: 1;
-  @while $i < 11 {
-    li:nth-child(#{$i}) {
-      padding: 4px;
-      background-color: lighten($color, $i * 3%);
-    }
-    $i: $i + 1;
-  }
-}
+// //for
+// .gradient {
+//   $color: green;
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   $i: 1;
+//   @while $i < 11 {
+//     li:nth-child(#{$i}) {
+//       padding: 4px;
+//       background-color: lighten($color, $i * 3%);
+//     }
+//     $i: $i + 1;
+//   }
+// }
 
-$socials-color: (
-  youtube: #ff0000,
-  facebook: #3b59b5,
-  twitter: #1da1f2,
-  instagram: #ffbf34,
-  twitch: #8134af,
-);
+// $socials-color: (
+//   youtube: #ff0000,
+//   facebook: #3b59b5,
+//   twitter: #1da1f2,
+//   instagram: #ffbf34,
+//   twitch: #8134af,
+// );
 
-.socials {
-  font-size: 2em;
-  font-family: arial;
-  font-weight: bold;
-  @each $social, $color in $socials-color {
-    .#{$social} {
-      color: $color;
-    }
-  }
+// .socials {
+//   font-size: 2em;
+//   font-family: arial;
+//   font-weight: bold;
+//   @each $social, $color in $socials-color {
+//     .#{$social} {
+//       color: $color;
+//     }
+//   }
+// }
+
+//built in function
+$warna-dasar: salmon;
+h1 {
+  //   color: adjust-color($color: $warna-dasar, $red: 100, $green: 100, $blue: -50);
+  //   color: adjust-hue($color: $warna-dasar, $degrees: 30deg);
+  //   color: complement($color: $warna-dasar);
+  //   color: darken($color: $warna-dasar, $amount: 20%);
+  //   color: lighten($color: $warna-dasar, $amount: 10%);
+  //   color: saturate($color: $warna-dasar, $amount: 10%);
+  //   color: grayscale($warna-dasar);
+  //   color: mix($warna-dasar, #000000, 80%);
+  //   color: fade-in($color: $warna-dasar, $amount: 0);
+  color: fade-out($color: $warna-dasar, $amount: 0.7);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  text-align: center;
 }
